@@ -74,6 +74,10 @@ Branches can contain subdivisions as well. Let's add a hi-hat to the last subdiv
 
 In the second strategy, we can use branches to create measures in a score. I call this top-level branching. You create the branch as the first element of the score and then fill it in with measures. In this example, I'll create four measures, each of which is subtly different. Let's hear what it sounds like.
 
+## Voices
+
+The underlying engine powering `yap.wags.fm` has support for six simultaneous sounds on each track. Any more than that and you're out of luck. While this is fine in most contexts, we can start to hear clipping in really dense material. To avoid clipping and to organize our cycles a bit more logically, we can use one of six track slots available. Here, I'm using `earth`, but the other ones are `wind`, `fire`, `lambert`, `hendricks` and `ross`. Named after, of course, Earth Wind and Fire, and Lambert Hendricks and Ross.
+
 ## Examples
 
 So that's mini-notation! In summary, we have three core components:
