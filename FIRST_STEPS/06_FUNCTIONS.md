@@ -37,3 +37,21 @@ The ability to have fine-grained control of time in less than ten characters is 
 ## Functions beget functions
 
 Functional programming tends to be a bit like the movie Inception. You have a concept used inside a concept which is itself used inside a concept. So can we use a function to generate a function that will be consumed by functions? Of course we can! Check it out: I'm going to take `rockstar` and turn it into a function. Bam, now it's a function. Then, I'm going to duplicate it over our six tracks, `earth`, `wind`, `fire`, `lambert`, `hendricks`, and `ross` with different values each time. Can you hear in your mind's ear what will happen?
+
+For each track, we've generated different piecewise functions, and we hear their inflection points alternating over time.
+
+## Time
+
+So far, we've been using `sampleTime`, but `wags` provides us with a lot of different times that can be used. In addition, we can use `clockTime`, which is 0 when we press play and marches forward without stopping as music continues. Let's use the same function on rate and volume but change the time and hear what happens. We can hear that, with `clockTime`, the change of rate is continuous, whereas with `sampleTime`, the rate resets to one every time the sample starts.
+
+The versions of time you can use are:
+- `littleCycleTime`, which is the time of the cycle resetting to 0 at each branch.
+- `bigCycleTime`, which is the time of the cycle continuing at each branch.
+
+Let's quickly hear those.
+
+Continuing, we've already seen `sampleTime` and `clockTime`. Each of these has a variant that's normalized between 0 and 1. For example, `normalizedSampleTime` is 0 when the sample starts and 1 when the cycle ends.
+
+`normalizedLittleCycleTime` and `normalizedBigCycleTime` behave the same way. There's also a `normalizedClockTime` that is between 0 and 1, where 0 is when the piece starts and 1 represents the end of time. Literally, the end of time, meaning when time immortal will cease. If you want to know when time will cease, use this value, but be warned that there may be rounding errors.
+
+So that's it! We've used functions of time to bring our loops to life. Let's end with a little example - it's an extract from a larger work. Let's jam by changing the functions of time and hearing what the result sounds like. I'll see y'all in the next lesson, where we'll discuss buffers.
