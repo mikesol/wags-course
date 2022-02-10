@@ -1,6 +1,6 @@
 # Bring your own sounds
 
-Very quickly when working with wags, you'll want to import your own sounds. There are a few ways to do that, and this lesson will cover them.
+Very quickly when working with wags, you'll want to import your own sounds. There are a few ways to do that, and this lesson will cover them. I'll do it all from a pad called `byos`, for "bring your own sounds."
 
 ## Chat
 
