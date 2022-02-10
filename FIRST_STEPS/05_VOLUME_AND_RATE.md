@@ -90,4 +90,4 @@ Using just `changeVolume`, `changeRate` and `onTag` we can make very expressive 
 
 As it's playing, I'll change the values. See if you can hear the result in the loop.
 
-So that's the end of the lesson! You now have two powerful sliders in your arsenal - a volume slider and a rate slider. And even more importantly, you've learned some patterns that we'll use time and time again as we're making music together.
+So that's the end of the lesson! You now have two powerful sliders in your arsenal - a volume slider and a rate slider. And even more importantly, you've learned some patterns that we'll use time and time again as we're making music together. In the next lesson, we'll apply the same ideas to volume and rate.
