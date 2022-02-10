@@ -2,7 +2,7 @@
 
 In our first lesson, we made a simple sampler. Let's recreate it real quick.
 
-I'm going to navigate to `https://yap.wags.fm/p/mini-notation` and replace line 10 with `hh`. This is what it sounds like.
+I'm going to navigate to `https://yap.wags.fm/p/mini-notation` and replace line 11 with `hh`. This is what it sounds like.
 
 `hh` is one of hundreds of sounds bundled with wags. It comes from the SuperDirt sample library, an open-source library of really nice samples. To see the full list of available sounds, check out `https://github.com/mikesol/wagsi/blob/main/SOUNDS.md`.
 
