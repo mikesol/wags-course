@@ -62,7 +62,7 @@ One thing to note is that wrapping things in parentheses has the same effect as 
 
 The next thing we want to look at is `changeVolume`. Intuitively, we understand with our ears that `changeVolume` changes the volume based on a number passed to it. In the web audio API, 0.0 is silent and 1.0 is full intensity, so going between the two modulates the volume. What's less obvious is what `map` and `const` are doing in there.
 
-Let's start with `map`. In PureScript, whenever we have some sort of container, we often want to drill down into its components and apply some transformation to each of them. `map` does that. We are drilling down into the cycle and changing the volume for _every_ element. `map` is one of the most useful functions you'll use in programming in general, and every language has its flavor of it. PureScript uses a version of `map` that's derived from a branch of mathematics called category theory, and specifically from the definition of a `Functor`. If you enjoy discovering new ideas in math, I highly encourage you to check out these articles, which are also linked in this lesson and describe the concepts quite well [1](https://medium.com/@lettier/your-easy-guide-to-monads-applicatives-functors-862048d61610)[2](https://bartoszmilewski.com/2015/01/20/functors/).
+Let's start with `map`. In PureScript, whenever we have some sort of container, we often want to drill down into its components and apply some transformation to each of them. `map` does that. We are drilling down into the Cycle and changing the volume for _every_ element. `map` is one of the most useful functions you'll use in programming in general, and every language has its flavor of it. PureScript uses a version of `map` that's derived from a branch of mathematics called category theory, and specifically from the definition of a `Functor`. If you enjoy discovering new ideas in math, I highly encourage you to check out these articles, which are also linked in this lesson and describe the concepts quite well [1](https://medium.com/@lettier/your-easy-guide-to-monads-applicatives-functors-862048d61610)[2](https://bartoszmilewski.com/2015/01/20/functors/).
 
 `const` is used for values that don't change. In other words, they ignore their environment. Here, `0.5` is ignoring its environment: it doesn't care what time it is, for example. It doesn't care about anything else but itself. How rude! Later on, we'll use the environment to create some cool effects, but for now we'll stay constantly at `0.5`.
 
@@ -72,9 +72,22 @@ Lastly, we have a new function, `parse_`, that we've needed to introduce. This i
 
 ## Programming
 
-We've covered a lot of ground here - we learned about the dollar sign, `const`, and two new functions `changeVolume` and `parse_`.
+We've covered a lot of ground here - we learned about the dollar sign, `map`, `const`, and two functions from wags called `changeVolume` and `parse_`.
 
 When you're coding, it can often be disorienting to remember the order of functions and what they do, very similar to when you're starting out with ProTools or Logic and you need to learn about all the menus, shortcuts, and dials. There are a few strategies you can use here:
 
 1. Copy and paste. There are hundreds of examples of wags floating around the internet. A great place to start is the wags cookbook. All of these examples can be pasted into wagpad verbatim. As you read through examples, you'll build intuition about how things work.
-2. The wags documentation. Documentation for wags is published on a platform called Pursuit. The documentation is vast because you can do lots of things, but for our purposes here we're interested in the module `WAGS.Lib.Tidal.Tidal`. Browsing the documentation, we see that the output of parse is the input to 
+2. The wags documentation. Documentation for wags is published on a platform called Pursuit. The documentation is vast because you can do lots of things, but for our purposes here we're interested in the module `WAGS.Lib.Tidal.Tidal`. Browsing the documentation, we see that the inputs to certain functions are the outputs of other ones, and we can assemble them like building blocs by following the types.
+3. Community. The PureScript community is always willing to answer questions and is very beginner-friendly.
+
+## Rates
+
+To close out this lesson, let's use the same pattern we used for volume to change the rate. We'll use exactly the same syntax, except instead of `changeVolume`, we'll use `changeRate`. You'll hear that the pitch shifts up a bit. Let's shift it down lower. And now back to the normal playback rate.
+
+To finish this lesson, we'll discover one last function - `onTag`. `onTag` is like `map` but filters for a specific tag. You can assign tags to samples by putting a semicolon after the sample followed by its tag. Let's first add some tags to the mini-notation. And then let's use `onTag` to modulate just these elements.
+
+Using just `changeVolume`, `changeRate` and `onTag` we can make very expressive loops quite quickly that would be more difficult to work with in a traditional DAW. As an example, let's check out this example, which I live-coded for an event in December 2021.
+
+As it's playing, I'll change the values. See if you can hear the result in the loop.
+
+So that's the end of the lesson! You now have two powerful sliders in your arsenal - a volume slider and a rate slider. And even more importantly, you've learned some patterns that we'll use time and time again as we're making music together.
