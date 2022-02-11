@@ -4,6 +4,54 @@ One of the most traditional, time-tested, and effective ways to build up a piece
 
 To go on a mini-rant, I think that traditional DAWs do this really poorly. If I have a section of a song that repeats, I have to copy and paste it at a certain point, which means that from the moment it's pasted, it lives a separate life and changes from one section are not propagated to the other section without lots of plugin wizardry and finagling with settings.
 
-In wags, smooshing together things, or appending them, is done using the standard PureScript append operation, or `<>` for short. This makes working with sections of music easier than a lot of other settings. Let's see how!
+In wags, there are a few different wags to smooth things together depending on how you'd like the smooshing to go. This session's pad will be on https://yap.wags.fm/p/append. Let's get to it!
+
+## Appending strings and symbols
+
+The simplest type of appending we can do is of strings. We do that with the append operator, which looks like this: `<>`.
+
+Let's append two strings and hear what they sound like, making sure to put whitespace between them.
+
+We can append whole sequences of strings using a function called `intercalate`.
+
+You may notice that we're no longer working with symbols. This has some added flexibility, but comes at the cost of the sound completely cutting out if there is a syntax error.
+
+Using symbols is safer because we'll get nicer errors, but it's a bit less ergonomic to append them. We have to use a class called Append, but otherwise, the process is quite similar.
+
+And as you can see, when there's an error, we get a better message and the music goes on.
 
 ## Appending cycles
+
+While appending strings is a quick way to start, it is much less powerful than appending several several cycles. Let's see how to do that.
+
+Let's start by creating some cycles using the `parse` function from before. We'll create a simple cycle with four bass drums followed by one with four hi-hats.
+
+We can append cycles in several ways. Using the `i` function will allow us to create internal cycles within the larger cycle.
+
+Using the `x` function will allow us to superpose them.
+
+And using the `b` function will allow us to branch the audio.
+
+Switching this quickly between different musical combinations is really hard in conventional DAWs, whereas code makes it easy.
+
+## Appending futures
+
+The last thing we'll do is append entire futures. This is a great way to combine sections of music into larger works. For those using wags as a composition environment, appending futures is a _must_.
+
+Let's create three different futures. We can audition each one.  Here's future 1.
+
+And here's future 2.
+
+And here's future 3.
+
+I call this type `AFuture` because it represents what comes next, aka the future. The term is a nod to the idea of a comonad, a powerful concept in functional programming that I'll get into during the deeper dive section of this course. For the time being, though, know that `AFuture` represents everything that will happen: rate changes, volume changes, and as we'll soon see, effects.
+
+Now, let's combine the futures. Combining futures is as easy as combining strings. You just use `append`.
+
+If you don't like the order of the future, no problem, just change it.
+
+You can even create different combinations of futures and then smoosh them together too.
+
+## Conclusion
+
+So there you go - we've seen how to smoosh together stuff in wags, from strings to symbols to cycles to the entire future. Now that we have killer sequences of music, let's add some effects like filters, reverb and delays in the next section. See you there!
