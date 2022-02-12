@@ -30,6 +30,24 @@ The more you work with audio, the more you'll realize that small parameter chang
 
 Another fun thing we can do with delay is create an echo effect. To do this, though, we'll need a feedback loop. As an opening salvo, let's listen to this version of happy birthday, which uses delay + feedback on the melody.
 
-Let's create a similar effect from scratch!
+Let's create a similar effect from scratch! We can use the same setup we have for our flange, but tweak it a little to get out echo.
 
-https://yap.wags.fm/p/effects2-2
+Any feedback loop requires a signal to feed-back into itself. To do this, we'll use a new term called `ref`. At the point of feedback, we'll refer to the node being fed back using `ref`.
+
+Let's create that node and call it `mymix`. For now it'll just be a small wrapper around our delay lines. We'll also get rid of the delay line with the lfo to simplify things a bit.
+
+Now, in our delay line, we'll insert a `gain` node and a `highpass` filter. They'll both serve to attenuate the echo. Lastly, we'll refer to the source - namely `mymix`, at the end of the tree by pointing to it using `ref`.
+
+And there you have it, we've got our echo line. Of course, we can spice stuff up a bit using functions of time. Let's add a few!
+
+## Pan
+
+Adding `pan` is relatively straightforward: we import `pan` and add it to a node just as we did with `delay`, `highpass` and `gain`. Let's hear how that sounds on this mix.
+
+That's quite nice, we have the main voice in the center and the echo swirling around us.
+
+## Other effects
+
+Now you may be wondering - where can I learn more about what effects are available? Look no further than the documentation! If you navigate to `https://pursuit.purescript.org/packages/purescript-wags/docs/WAGS.Change.Optionals`, you'll see everything that's available, which is almost the whole web audio API.  You can also browse the web audio API documentation at `https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API`. There are compressors, waveshapers, oscillators, analyzers and microphones. There's even an API for custom audio nodes.
+
+In the second part of this course, we'll learn how to use some of the more advanced features of the web audio API, like custom nodes. In the next lesson, I'd like to focus on synthetic sounds, like square wavees and triangle waves, to show you how to build custom synths on your pad. See you there!
