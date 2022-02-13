@@ -18,6 +18,8 @@ As the `q` value gets higher, the frequency band gets narrower and we hear a ton
 
 One very effective technique is to create a bank of bandpass filters, each with a subtly different swelling sound. So now I'm going to copy and paste my bandpass four times into a global `gain` and give each one a name, `bp0`, `bp1`, `bp2`, and `bp3`. I'll tweak each `calcSope` to have different periodicity, and I'll set the frequency at different places in the spectrum. Let's hear the result.
 
+These filters are applied globally to a track, which is usually how we put music together in DAWs. However, it's possible to do the same thing on the sample level. For example, let's apply this filter bank to a single sample. We use `changeEffect` instead of `addEffect` and we can use `onTag` to single out a sample. Because we're at the sample level now, we can also use `sampleTime` to start from `0.0` when the sample starts. Let's hear what it sounds like.
+
 The web audio API provides eight different types of biquad filters: high pass, low pass, high shelf, low shelf, bandpass, notch (which is a band-reject filter), allpass (which let's all frequencies through but modifies the phase of sounds) and peaking, which is an advanced filter that can act simulatenously and bandpass and bandreject depending on the gain parameter. Wags exposes all of them. For example, we can change one of these filters to `lowpass` and another to `notch`. Let's hear the result!
 
 ## Reverb
