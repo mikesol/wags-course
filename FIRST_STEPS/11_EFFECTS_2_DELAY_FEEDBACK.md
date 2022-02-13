@@ -50,4 +50,4 @@ That's quite nice, we have the main voice in the center and the echo swirling ar
 
 Now you may be wondering - where can I learn more about what effects are available? Look no further than the documentation! If you navigate to `https://pursuit.purescript.org/packages/purescript-wags/docs/WAGS.Change.Optionals`, you'll see everything that's available, which is almost the whole web audio API.  You can also browse the web audio API documentation at `https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API`. There are compressors, waveshapers, oscillators, analyzers and microphones. There's even an API for custom audio nodes.
 
-In the second part of this course, we'll learn how to use some of the more advanced features of the web audio API, like custom nodes. In the next lesson, I'd like to focus on synthetic sounds, like square wavees and triangle waves, to show you how to build custom synths on your pad. See you there!
+In the second part of this course, we'll learn how to use some of the more advanced features of the web audio API, like custom nodes. In the next lesson, I'd like to apply these techniques to drones. See you there!
