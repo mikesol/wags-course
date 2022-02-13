@@ -52,7 +52,9 @@ Let's create a sequence of notes.
 
 And a sequence of glitches.
 
-We'll make both of them `NonEmptyArray`-s, which in a way super-charges them. As NonEmptyArrays, they become what we call monads, and we can do some neat stuff. For example, I'm going to write what's called a `do` bloc that mixes the two sequences together. I'll pull one value from one sequence, one from the other, then return them mixed together. Then, I'll map over the structure with an index using a function called `mapWithIndex`, which I'll import.
+We'll make both of them `NonEmptyArray`-s, which gives them some super powers. They become something called monads, which allows us to use something called `do` notation. I'm going to briefly do something more advanced just to give you a sense of the powerful algorithms that `do` notation allows for.
+
+Let's start a `do` bloc with the word `do`. I'll pull one value from the first sequence, one from the second, then return them mixed together. Then, I'll map over the structure with an index using a function called `mapWithIndex`, which I'll import.
 
 Let's use a cosine function to warp our mapping, which will distribute the notes quite densely towards the beginning and end of the sequence but sparsely towards the end.
 
@@ -60,7 +62,7 @@ Now, let's listen to the result!
 
 ## Sequencing futures
 
-The last thing we'll do is append entire futures. This is a great way to combine sections of music into larger works. For those using wags as a composition environment, appending futures is a _must_.
+The last thing we'll do is append entire futures. This is a great way to combine sections of music into larger works. For those using wags as a composition environment, appending futures is a _must_. It's what allows us to work with logical sections of a piece of music.
 
 Let's create three different futures. We can audition each one.  Here's future 1.
 
@@ -75,6 +77,8 @@ Now, let's combine the futures. Combining futures is as easy as combining string
 If you don't like the order of the future, no problem, just change it.
 
 You can even create different combinations of futures and then smoosh them together too.
+
+This gives us a way to solo out little parts of music while building up a larger whole.
 
 ## Conclusion
 
