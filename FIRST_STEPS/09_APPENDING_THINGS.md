@@ -4,7 +4,7 @@ One of the most traditional, time-tested, and effective ways to build up a piece
 
 To go on a mini-rant, I think that traditional DAWs do this really poorly. If I have a section of a song that repeats, I have to copy and paste it at a certain point, which means that from the moment it's pasted, it lives a separate life and changes from one section are not propagated to the other section without lots of plugin wizardry and finagling with settings.
 
-In wags, there are a few different wags to smooth things together depending on how you'd like the smooshing to go. This session's pad will be on https://yap.wags.fm/p/append. Let's get to it!
+In wags, there are a few different wags to smoosh things together depending on how you'd like the smooshing to go. This session's pad will be on https://yap.wags.fm/p/append. Let's get to it!
 
 ## Appending strings and symbols
 
@@ -34,7 +34,15 @@ And using the `b` function will allow us to branch the audio.
 
 Switching this quickly between different musical combinations is really hard in conventional DAWs, whereas code makes it easy.
 
-## Appending futures
+## Making sequential music
+
+Cycles are great for loop-based music, but what if we want to make something closer to a score?
+
+We can accomplish that with the `mseq` function. `mseq` takes a non-empty sequence of notes and turns them into a score.
+
+I'll import `mseq` as well as a function called `nl`. `nl` is short for "note lazy" because it's a quick, and perhaps lazy, way to input notes.
+
+## Sequencing futures
 
 The last thing we'll do is append entire futures. This is a great way to combine sections of music into larger works. For those using wags as a composition environment, appending futures is a _must_.
 
