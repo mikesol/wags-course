@@ -42,7 +42,7 @@ Let's try one last value, this time using a filter. Note that lookback operation
 
 ```purescript
 x = map
-  ( fromMaybe 0.0
+  ( fromMaybe 2000.0
       <<< flip index 0
       <<< filterMap
         ( join
