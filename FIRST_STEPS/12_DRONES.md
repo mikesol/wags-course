@@ -36,7 +36,7 @@ Now, let's change the frequency.
 
 Again, we hear that the oscillator picks up where it left off without an abrupt transition.
 
-Let's try one last value, this time using a filter. Note that lookback operations on filters and effects are slightly more computationally expensive, so to avoid artifacts, you'll want to limit the number or these. We'll use the same syntax for our volume fade, except we'll apply it to the effects chain using `ldt`. In order to apply effects on this filter, we'll have to find it in the input, which we can do using the function `numericTumult`
+Let's try one last value, this time using a filter. Note that lookback operations on filters and effects are slightly more computationally expensive, so to avoid artifacts, you'll want to limit the number or these. We'll use the same syntax for our volume fade, except we'll apply it to the effects chain using `ldt`. In order to apply effects on this filter, we'll have to find it in the input, which we can do using the function `numericTumult`.
 
 ```purescript
 numericTumult 2000.0 (Proxy :: _ "makeHighpass") "myfilt" _.frequency)
