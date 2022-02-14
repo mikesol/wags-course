@@ -36,7 +36,9 @@ Now, let's change the frequency.
 
 Again, we hear that the oscillator picks up where it left off without an abrupt transition.
 
-Let's try one last value, this time using a filter. Note that lookback operations on filters and effects are slightly more computationally expensive, so to avoid artifacts, you'll want to limit the number or these. We'll use the same syntax for our volume fade, except we'll apply it to the effects chain using `ldt`. In order to apply effects on this filter, we'll have to find it in the input, which we can do using the following function:
+Let's try one last value, this time using a filter. Note that lookback operations on filters and effects are slightly more computationally expensive, so to avoid artifacts, you'll want to limit the number or these. We'll use the same syntax for our volume fade, except we'll apply it to the effects chain using `ldt`. In order to apply effects on this filter, we'll have to find it in the input, which we can do using the following syntax.
+
+> One thing to note is that this is an advanced feature of wags, so it requires a bit more syntax to work with. In the future, there may be some shorter functions to do this sort of thing, but for now we'll work with this. I'll write it first, then compile it, then play it, then walk through what's going on in the code.
 
 ```purescript
 x = map
@@ -48,13 +50,20 @@ x = map
                 <<< prj (Proxy :: _ "setFrequency")
                 <<< unwrap
             )
+          <<< join
           <<< safeUntumult
       )
   )
   input
 ```
 
+Now, let's compile it.
+
+Great, it checks, and now, let's play it.
+
 Now, we can hear the fade of the frequency, and we can fade it down as well over time. Note that the same technique can be applied to global effects chains using `lvt` instead of `ldt`.
+
+In the code, what we are doing is taking the raw instructions, which we get from `safeUntumult`, and flattening them to an array using `join`. Then, we're finding the `setFrequency` instruction for `myfilt` and taking the first one. If it is not present, we use a default value of 2000.0
 
 ## Conclusion
 
