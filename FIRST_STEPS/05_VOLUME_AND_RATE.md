@@ -8,9 +8,9 @@ Before we begin, it's important to note that this is the first lesson where we'r
 
 ## Volume
 
-The first thing we'll be doing is changing the volume. We'll be doing this with two functions: one called `changeVolume`, and one called `parse_`. The word function means lots of things in different contexts, but here in PureScript, the language that wags is written in, a function is conceptually quite elegant. It's something that takes an input and produces an output.
+The first thing we'll be doing is changing the volume. We'll be doing this with two functions: one called `changeVolume`, and one called `parse`. The word function means lots of things in different contexts, but here in PureScript, the language that wags is written in, a function is conceptually quite elegant. It's something that takes an input and produces an output.
 
-To use `changeVolume` and `parse_`, we'll have to first import them. You can see some `import` statements at the top of this file, and we'll `import` the function `changeVolume` from the module `WAGS.Lib.Tidal.Tidal`.
+To use `changeVolume` and `parse`, we'll have to first import them. You can see some `import` statements at the top of this file, and we'll `import` the function `changeVolume` from the module `WAGS.Lib.Tidal.Tidal`.
 
 There are lots of little syntax things to get right here - we need to remember to add a comma between `s` and `changeVolume`. What if we forget? Let's omit the comma, press play, and see what happens. Like before, we get a red exclamation point with the following message:
 
@@ -22,7 +22,7 @@ On line 8:
 
 So we'll always know what line to look at and we'll have a sense of where the problem is. Unfortunately, the error message isn't always ideal. For example, a clearer message could be "you forgot a comma after `s`." Many programming languages struggle to anticipate errors for everything that can go wrong because lots of things can usually go wrong. But the error messages are usually enough to know where to start looking. In this case, let's fix the error and press on.
 
-After importing `changeVolume` and `parse_`, the next thing we'll want to do is use them. To do that, we'll go down to line 17 and after `s` we'll put `$ map (changeVolume (const 0.5)) $ parse_`. There's a lot to unpack in terms of the syntax, but let's focus on the result first. The volume will be half as loud. Let's take a listen.
+After importing `changeVolume` and `parse`, the next thing we'll want to do is use them. To do that, we'll go down to line 17 and after `s` we'll put `$ map (changeVolume (const 0.5)) $ parse`. There's a lot to unpack in terms of the syntax, but let's focus on the result first. The volume will be half as loud. Let's take a listen.
 
 We can change the volume in real-time. Let's make it very soft - `0.1`, for example.
 
@@ -30,7 +30,7 @@ Now, let's increase it to `1.0`.
 
 You'll hear the volume changing in realtime for all of our samples.
 
-Intuitively, we understand that when we change the number, the volume changes. What's much less clear is the function of the dollar signs, the word map, the word `const`, the parentheses, and the two functions `changeVolume` and `parse_`. That's what we'll take time to unpack now.
+Intuitively, we understand that when we change the number, the volume changes. What's much less clear is the function of the dollar signs, the word map, the word `const`, the parentheses, and the two functions `changeVolume` and `parse`. That's what we'll take time to unpack now.
 
 ## Syntax
 
