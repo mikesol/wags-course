@@ -42,19 +42,23 @@ Let's try one last value, this time using a filter. Note that lookback operation
 
 ```purescript
 x = map
-  ( fromMaybe 2000.0
-      ( flip index 0
-          <<< filterMap
-            ( map _.frequency
-                <<< filter (eq "myfilt" <<< _.id)
-                <<< prj (Proxy :: _ "setFrequency")
-                <<< unwrap
-            )
-          <<< join
-          <<< safeUntumult
-      )
+  ( fromMaybe 0.0
+      <<< flip index 0
+      <<< filterMap
+        ( join
+            <<< map
+              ( _.frequency
+                  >>> unwrap
+                  >>> _.param
+                  >>> maybe Nothing Just
+              )
+            <<< filter (eq "myfilt" <<< _.id)
+            <<< prj (Proxy :: _ "setFrequency")
+            <<< unwrap
+        )
+      <<< join
+      <<< safeUntumult
   )
-  input
 ```
 
 Now, let's compile it.
