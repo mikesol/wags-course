@@ -14,7 +14,7 @@ Let's start with volume: currently, everything is at an even volume, which is ki
 
 Now, let's use entropy combined with clock time to change the loop itself. To do this, we'll use `changeSampleF`, which allow us to change the sample as a function of time.
 
-We'll set up 10 functions - one for each note, and we'll add a default implementation for each one that returns a single sample as a function of clock time. There are a couple things to note here: we're modulating clock time in a loop - in this case, 120 seconds; and we're using guards for the first time. Guards allow us to suscinctly express different conditional branches to take, and we'll fill in the conditions shortly.
+We'll set up twelve functions - one for each note, and we'll add a default implementation for each one that returns a single sample as a function of clock time. There are a couple things to note here: we're modulating clock time in a loop - in this case, 120 seconds; and we're using guards for the first time. Guards allow us to suscinctly express different conditional branches to take, and we'll fill in the conditions shortly.
 
 The last thing we need to do is to create a `preload` array. The wagpad engine scans music to download all of the samples before they start playing, but when you are choosing the samples as a functino of time, there's no way to know exactly what will play. So, we preload all of the samples. Luckily, because the samples follow a consistent naming pattern, we can use the `range` function to generate an array of numbers and the `map` function to convert them to strings.
 
