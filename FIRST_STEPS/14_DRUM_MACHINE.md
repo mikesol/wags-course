@@ -74,7 +74,7 @@ This is one of many ways to use functional programming to create domain-specific
 
 Congratulations for finishing the first course in my "Soundly functional" series! In this course, over the series of fourteen lessons, we've learned to use wagpad. Because wagpad is a full-featured DAW, you can push it really far, as we saw in several examples. In the links on the course's homepage, you'll see many examples of what's possible with wagpad, from loops to full-length works.
 
-The second course in the soundly functional series will focus more on the functional aspect, teaching patterns in functional programming through sound. Through the musical concepts in this course, we'll learn about categories, functors, monads, algebras, adjunctions, monoids, free structures, the Yoneda lemma, and much more. By the end, you'll understand these concepts through music, and you'll be able to apply them to musical creation and to lots of other disciplines. For more information on the course, please see this course's main page.
+The second course in the soundly functional series will focus more on the functional aspect, teaching patterns in functional programming through sound. Using the musical concepts in this course, we'll learn about categories, functors, monads, algebras, adjunctions, monoids, free structures, the Yoneda lemma, and much more. By the end, you'll understand these concepts through music, and you'll be able to apply them to musical creation and to lots of other disciplines. For more information on the course, please see this course's main page.
 
 Lastly, a reminder to please post your work on discourse.wags.fm. I'm looking forward to hearing your music!
 
