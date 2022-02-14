@@ -36,7 +36,25 @@ Now, let's change the frequency.
 
 Again, we hear that the oscillator picks up where it left off without an abrupt transition.
 
-Let's try one last value, this time using a filter. Note that lookback operations on filters and effects are slightly more computationally expensive, so to avoid artifacts, you'll want to limit the number or these. We'll use the same syntax for fadeIn, except we'll apply it to the effects chain using `ldt` and we'll precede our fade by a function that finds the specific filter we want to operate on - in this case, `usingSetFrequency` of the filter `myfilt`. Now, we can hear the fade of the frequency, and we can fade it down as well over time. Note that the same technique can be applied to global effects chains using `lvt` instead of `ldt`.
+Let's try one last value, this time using a filter. Note that lookback operations on filters and effects are slightly more computationally expensive, so to avoid artifacts, you'll want to limit the number or these. We'll use the same syntax for our volume fade, except we'll apply it to the effects chain using `ldt`. In order to apply effects on this filter, we'll have to find it in the input, which we can do using the following function:
+
+```purescript
+x = map
+  ( fromMaybe 2000.0
+      ( flip index 0
+          <<< filterMap
+            ( map _.frequency
+                <<< filter (eq "myfilt" <<< _.id)
+                <<< prj (Proxy :: _ "setFrequency")
+                <<< unwrap
+            )
+          <<< safeUntumult
+      )
+  )
+  input
+```
+
+Now, we can hear the fade of the frequency, and we can fade it down as well over time. Note that the same technique can be applied to global effects chains using `lvt` instead of `ldt`.
 
 ## Conclusion
 
