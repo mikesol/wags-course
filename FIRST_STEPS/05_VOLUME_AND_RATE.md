@@ -66,13 +66,13 @@ Let's start with `map`. In PureScript, whenever we have some sort of container, 
 
 `const` is used for values that don't change. In other words, they ignore their environment. Here, `0.5` is ignoring its environment: it doesn't care what time it is, for example. It doesn't care about anything else but itself. How rude! Later on, we'll use the environment to create some cool effects, but for now we'll stay constantly at `0.5`.
 
-## parse_
+## parse
 
-Lastly, we have a new function, `parse_`, that we've needed to introduce. This is because `changeVolume` cannot accept raw mini-notation. The mini-notation needs to be transformed into a `Cycle` before-hand, which is what `parse_` does.
+Lastly, we have a new function, `parse`, that we've needed to introduce. This is because `changeVolume` cannot accept raw mini-notation. The mini-notation needs to be transformed into a `Cycle` before-hand, which is what `parse` does.
 
 ## Programming
 
-We've covered a lot of ground here - we learned about the dollar sign, `map`, `const`, and two functions from wags called `changeVolume` and `parse_`.
+We've covered a lot of ground here - we learned about the dollar sign, `map`, `const`, and two functions from wags called `changeVolume` and `parse`.
 
 When you're coding, it can often be disorienting to remember the order of functions and what they do, very similar to when you're starting out with ProTools or Logic and you need to learn about all the menus, shortcuts, and dials. There are a few strategies you can use here:
 
