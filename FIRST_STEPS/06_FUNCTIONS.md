@@ -16,7 +16,11 @@ As a last exercise, what if we have a sine wave modulating a sine wave? Let's pl
 
 This technique is often called a low-frequency oscillator, and all DAWs have the ability to use LFOs in various contexts. The power of a language like PureScript is that you can use LFOs _anywhere_. For example, Phil Freeman has made a pad that uses an LFO to modulate time itself, which is pretty wild and leads to a distribution of notes that would be really challenging in other settings. Let's listen to it.
 
-Zooming out a bit, what we've accomplished here is that we're using the `sampleTime`, or the time a sample starts, to change the volume. Let's try out another function. This time, I'm going to use `simplePiecewise` to create a piecewise function of time.
+Zooming out a bit, what we've accomplished here is that we're using the `sampleTime`, or the time a sample starts, to change the volume. Of course, you don't need to define all of these functions yourself - a lot of them are predefined in wags. Let's replace our homegrown LFO with a function called LFO that does the sample thing.
+
+And let's listen to it.
+
+Now, let's try out another function. This time, I'm going to use `simplePiecewise` to create a piecewise function of time.
 
 Let's now create another piecewise function to control the rate.
 
@@ -53,5 +57,9 @@ Let's quickly hear those.
 Continuing, we've already seen `sampleTime` and `clockTime`. Each of these has a variant that's normalized between 0 and 1. For example, `normalizedSampleTime` is 0 when the sample starts and 1 when the cycle ends.
 
 `normalizedLittleCycleTime` and `normalizedBigCycleTime` behave the same way. There's also a `normalizedClockTime` that is between 0 and 1, where 0 is when the piece starts and 1 represents the end of time. Literally, the end of time, meaning when time immortal will cease. If you want to know when time will cease, use this value, but be warned that there may be rounding errors.
+
+## Putting together functions
+
+Sometimes, we'd like to add an LFO to another LFO or multiply an LFO with a piecewise function. To do this, we use the two operators `<$>` and `<*>`. I'll be going much more into what these two operators do in the second Soundly Functional course, but for this course, just know that they allow you to combine together two functions. For example, let's multiply an LFO by a piecewise function to taper it off over time.
 
 So that's it! We've used functions of time to bring our loops to life. Let's end with a little example - it's an extract from a larger work. Let's jam by changing the functions of time and hearing what the result sounds like. I'll see y'all in the next lesson, where we'll discuss buffers.
