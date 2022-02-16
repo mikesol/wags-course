@@ -1,4 +1,4 @@
-# Mini-notatoin
+# Mini-notation
 
 In our first lesson, we made a simple sampler. Let's recreate it real quick.
 
